@@ -8,3 +8,6 @@
 <br>
 <h3>Install brain-calc</h3>
 <a href="https://asciinema.org/a/xGDSCxoqfgSrVNLw53rmQPMBE" target="_blank"><img src="https://asciinema.org/a/xGDSCxoqfgSrVNLw53rmQPMBE.svg" /></a>
+<br>
+<h3>Install brain-calc</h3>
+<a href="https://asciinema.org/a/kCrMh5BLgIjApqSC4MOvcgmUr" target="_blank"><img src="https://asciinema.org/a/kCrMh5BLgIjApqSC4MOvcgmUr.svg" /></a>
