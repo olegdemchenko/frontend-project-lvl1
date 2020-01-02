@@ -1,0 +1,27 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.game = exports.rules = void 0;
+const rules = 'What number is missing in the progression?';
+exports.rules = rules;
+
+const game = () => {
+  const startNumb = Math.ceil(Math.random() * 30);
+  const d = Math.ceil(Math.random() * 9);
+  const arithmeticProgression = [];
+  arithmeticProgression.push(startNumb);
+
+  for (let i = 1; i < 10; i += 1) {
+    arithmeticProgression.push(arithmeticProgression[i - 1] + d);
+  }
+
+  const answer = arithmeticProgression[d];
+  arithmeticProgression[d] = '..';
+  console.log(`Question: ${arithmeticProgression.join(' ')}`);
+  return (arg = answer) => String(arg);
+};
+
+exports.game = game;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9nYW1lcy9wcm9ncmVzc2lvbi5qcyJdLCJuYW1lcyI6WyJydWxlcyIsImdhbWUiLCJzdGFydE51bWIiLCJNYXRoIiwiY2VpbCIsInJhbmRvbSIsImQiLCJhcml0aG1ldGljUHJvZ3Jlc3Npb24iLCJwdXNoIiwiaSIsImFuc3dlciIsImNvbnNvbGUiLCJsb2ciLCJqb2luIiwiYXJnIiwiU3RyaW5nIl0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQSxNQUFNQSxLQUFLLEdBQUcsNENBQWQ7OztBQUNBLE1BQU1DLElBQUksR0FBRyxNQUFNO0FBQ2pCLFFBQU1DLFNBQVMsR0FBR0MsSUFBSSxDQUFDQyxJQUFMLENBQVVELElBQUksQ0FBQ0UsTUFBTCxLQUFnQixFQUExQixDQUFsQjtBQUNBLFFBQU1DLENBQUMsR0FBR0gsSUFBSSxDQUFDQyxJQUFMLENBQVVELElBQUksQ0FBQ0UsTUFBTCxLQUFnQixDQUExQixDQUFWO0FBQ0EsUUFBTUUscUJBQXFCLEdBQUcsRUFBOUI7QUFDQUEsRUFBQUEscUJBQXFCLENBQUNDLElBQXRCLENBQTJCTixTQUEzQjs7QUFDQSxPQUFLLElBQUlPLENBQUMsR0FBRyxDQUFiLEVBQWdCQSxDQUFDLEdBQUcsRUFBcEIsRUFBd0JBLENBQUMsSUFBSSxDQUE3QixFQUFnQztBQUM5QkYsSUFBQUEscUJBQXFCLENBQUNDLElBQXRCLENBQTJCRCxxQkFBcUIsQ0FBQ0UsQ0FBQyxHQUFHLENBQUwsQ0FBckIsR0FBK0JILENBQTFEO0FBQ0Q7O0FBQ0QsUUFBTUksTUFBTSxHQUFHSCxxQkFBcUIsQ0FBQ0QsQ0FBRCxDQUFwQztBQUNBQyxFQUFBQSxxQkFBcUIsQ0FBQ0QsQ0FBRCxDQUFyQixHQUEyQixJQUEzQjtBQUNBSyxFQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBYSxhQUFZTCxxQkFBcUIsQ0FBQ00sSUFBdEIsQ0FBMkIsR0FBM0IsQ0FBZ0MsRUFBekQ7QUFDQSxTQUFPLENBQUNDLEdBQUcsR0FBR0osTUFBUCxLQUFrQkssTUFBTSxDQUFDRCxHQUFELENBQS9CO0FBQ0QsQ0FaRCIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IHJ1bGVzID0gJ1doYXQgbnVtYmVyIGlzIG1pc3NpbmcgaW4gdGhlIHByb2dyZXNzaW9uPyc7XG5jb25zdCBnYW1lID0gKCkgPT4ge1xuICBjb25zdCBzdGFydE51bWIgPSBNYXRoLmNlaWwoTWF0aC5yYW5kb20oKSAqIDMwKTtcbiAgY29uc3QgZCA9IE1hdGguY2VpbChNYXRoLnJhbmRvbSgpICogOSk7XG4gIGNvbnN0IGFyaXRobWV0aWNQcm9ncmVzc2lvbiA9IFtdO1xuICBhcml0aG1ldGljUHJvZ3Jlc3Npb24ucHVzaChzdGFydE51bWIpO1xuICBmb3IgKGxldCBpID0gMTsgaSA8IDEwOyBpICs9IDEpIHtcbiAgICBhcml0aG1ldGljUHJvZ3Jlc3Npb24ucHVzaChhcml0aG1ldGljUHJvZ3Jlc3Npb25baSAtIDFdICsgZCk7XG4gIH1cbiAgY29uc3QgYW5zd2VyID0gYXJpdGhtZXRpY1Byb2dyZXNzaW9uW2RdO1xuICBhcml0aG1ldGljUHJvZ3Jlc3Npb25bZF0gPSAnLi4nO1xuICBjb25zb2xlLmxvZyhgUXVlc3Rpb246ICR7YXJpdGhtZXRpY1Byb2dyZXNzaW9uLmpvaW4oJyAnKX1gKTtcbiAgcmV0dXJuIChhcmcgPSBhbnN3ZXIpID0+IFN0cmluZyhhcmcpO1xufTtcbmV4cG9ydCB7IHJ1bGVzLCBnYW1lIH07XG4iXX0=
