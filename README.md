@@ -11,3 +11,9 @@
 <br>
 <h3>Install brain-calc</h3>
 <a href="https://asciinema.org/a/kCrMh5BLgIjApqSC4MOvcgmUr" target="_blank"><img src="https://asciinema.org/a/kCrMh5BLgIjApqSC4MOvcgmUr.svg" /></a>
+<br>
+<h3>Install brain-progression</h3>
+<a href="https://asciinema.org/a/GJsnO38L8mHc0BmP39Xs5I9UN" target="_blank"><img src="https://asciinema.org/a/GJsnO38L8mHc0BmP39Xs5I9UN.svg" /></a>
+<br>
+<h3>Install brain-prime</h3>
+<a href="https://asciinema.org/a/4Z3cGLLAhFZRVyUFCitGOVu4p" target="_blank"><img src="https://asciinema.org/a/4Z3cGLLAhFZRVyUFCitGOVu4p.svg" /></a>
