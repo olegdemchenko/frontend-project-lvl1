@@ -1,8 +1,11 @@
-const rules = 'What is the result of the expression ?';
+import randomNumbGen from './randomNumbGen';
 
+const rules = 'What is the result of the expression ?';
 const game = () => {
   const operators = ['+', '-', '*'];
-  const stroke = `${Math.floor(Math.random() * 100)} ${operators[Math.floor(Math.random() * 3)]} ${Math.floor(Math.random() * 100)}`;
+  const upperLimitOfNumb = 100;
+  const lowerLimitOfNumb = 0;
+  const stroke = `${randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb)} ${operators[randomNumbGen('floor', lowerLimitOfNumb, operators.length)]} ${randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb)}`;
   console.log(`Question: ${stroke}`);
   return (param = stroke) => String(eval(param));
 };

@@ -1,9 +1,11 @@
+import randomNumbGen from './randomNumbGen';
 
 const rules = 'Find the greatest common divisor of given numbers';
-
 const game = () => {
-  const numb1 = Math.floor(Math.random() * 100);
-  const numb2 = Math.floor(Math.random() * 100);
+  const upperLimitOfNumb = 100;
+  const lowerLimitOfNumb = 1;
+  const numb1 = randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb);
+  const numb2 = randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb);
   console.log(`Question: ${numb1}, ${numb2}`);
   return (arg1 = numb1, arg2 = numb2) => {
     let nod = 0;

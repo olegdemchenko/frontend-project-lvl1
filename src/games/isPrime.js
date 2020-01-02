@@ -1,6 +1,10 @@
+import randomNumbGen from './randomNumbGen';
+
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 const game = () => {
-  const randomNumb = Math.ceil(Math.random() * 100 + 1);
+  const upperLimitOfNumb = 100;
+  const lowerLimitOfNumb = 1;
+  const randomNumb = randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb);
   console.log(`Question: ${randomNumb}`);
   return (arg = randomNumb) => {
     let counter = 2;

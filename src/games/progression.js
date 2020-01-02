@@ -1,7 +1,12 @@
+import randomNumbGen from './randomNumbGen';
+
 const rules = 'What number is missing in the progression?';
 const game = () => {
-  const startNumb = Math.ceil(Math.random() * 30);
-  const d = Math.ceil(Math.random() * 9);
+  const upperLimitOfNumb = 50;
+  const upperLimitOfD = 9;
+  const lowerLimitOfNumb = 1;
+  const startNumb = randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb);
+  const d = randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfD);
   const arithmeticProgression = [];
   arithmeticProgression.push(startNumb);
   for (let i = 1; i < 10; i += 1) {
