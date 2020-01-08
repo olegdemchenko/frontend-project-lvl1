@@ -1,7 +1,8 @@
-import randomNumbGen from './randomNumbGen';
+import randomNumbGen from '../utils';
+import gameConsole from '../index';
 
 const rules = 'What number is missing in the progression?';
-const game = () => {
+const questionGenerator = () => {
   const upperLimitOfNumb = 50;
   const upperLimitOfD = 9;
   const lowerLimitOfNumb = 1;
@@ -14,7 +15,9 @@ const game = () => {
   }
   const answer = arithmeticProgression[d];
   arithmeticProgression[d] = '..';
-  console.log(`Question: ${arithmeticProgression.join(' ')}`);
-  return (arg = answer) => String(arg);
+  const question = `${arithmeticProgression.join(' ')}`;
+  const correctAnswer = String(answer);
+  return { question, correctAnswer };
 };
-export { rules, game };
+const game = () => gameConsole(0, questionGenerator, rules);
+export default game;

@@ -1,13 +1,14 @@
-import randomNumbGen from './randomNumbGen';
+import randomNumbGen from '../utils';
+import gameConsole from '../index';
 
 const rules = 'Find the greatest common divisor of given numbers';
-const game = () => {
+const questionGenerator = () => {
   const upperLimitOfNumb = 100;
   const lowerLimitOfNumb = 1;
   const numb1 = randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb);
   const numb2 = randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb);
-  console.log(`Question: ${numb1}, ${numb2}`);
-  return (arg1 = numb1, arg2 = numb2) => {
+  const question = `${numb1}, ${numb2}`;
+  const correctAnswer = (arg1 = numb1, arg2 = numb2) => {
     let nod = 0;
     let counter = 1;
     while (counter <= Math.min(arg1, arg2)) {
@@ -18,5 +19,7 @@ const game = () => {
     }
     return `${nod}`;
   };
+  return { question, correctAnswer: correctAnswer() };
 };
-export { rules, game };
+const game = () => gameConsole(0, questionGenerator, rules);
+export default game;

@@ -1,12 +1,14 @@
-import randomNumbGen from './randomNumbGen';
+import randomNumbGen from '../utils';
+import gameConsole from '../index';
 
 const rules = 'What is the result of the expression ?';
-const game = () => {
+const questionGenerator = () => {
   const operators = ['+', '-', '*'];
   const upperLimitOfNumb = 100;
   const lowerLimitOfNumb = 0;
-  const stroke = `${randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb)} ${operators[randomNumbGen('floor', lowerLimitOfNumb, operators.length)]} ${randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb)}`;
-  console.log(`Question: ${stroke}`);
-  return (param = stroke) => String(eval(param));
+  const question = `${randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb)} ${operators[randomNumbGen('floor', lowerLimitOfNumb, operators.length)]} ${randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb)}`;
+  const correctAnswer = String(eval(question));
+  return { question, correctAnswer };
 };
-export { rules, game };
+const game = () => gameConsole(0, questionGenerator, rules);
+export default game;

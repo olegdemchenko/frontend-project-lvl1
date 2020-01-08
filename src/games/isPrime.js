@@ -1,12 +1,12 @@
-import randomNumbGen from './randomNumbGen';
+import randomNumbGen from '../utils';
+import gameConsole from '../index';
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-const game = () => {
+const questionGenerator = () => {
   const upperLimitOfNumb = 100;
   const lowerLimitOfNumb = 1;
-  const randomNumb = randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb);
-  console.log(`Question: ${randomNumb}`);
-  return (arg = randomNumb) => {
+  const question = `${randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb)}`;
+  const correctAnswer = (arg = question) => {
     let counter = 2;
     while (counter < arg) {
       if (arg % counter === 0) {
@@ -16,5 +16,7 @@ const game = () => {
     }
     return 'yes';
   };
+  return { question, correctAnswer: correctAnswer() };
 };
-export { rules, game };
+const game = () => gameConsole(0, questionGenerator, rules);
+export default game;

@@ -1,11 +1,13 @@
-import randomNumbGen from './randomNumbGen';
+import randomNumbGen from '../utils';
+import gameConsole from '../index';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no"';
-const game = () => {
+const questionGenerator = () => {
   const upperLimitOfNumb = 100;
   const lowerLimitOfNumb = 1;
-  const numb = randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb);
-  console.log(`Question: ${numb}`);
-  return (param = numb) => (param % 2 === 0 ? 'yes' : 'no');
+  const question = randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb);
+  const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
+  return { question, correctAnswer };
 };
-export { rules, game };
+const game = () => gameConsole(0, questionGenerator, rules);
+export default game;
