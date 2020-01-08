@@ -6,7 +6,7 @@ const questionGenerator = () => {
   const operators = ['+', '-', '*'];
   const upperLimitOfNumb = 100;
   const lowerLimitOfNumb = 0;
-  const question = `${randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb)} ${operators[randomNumbGen('floor', lowerLimitOfNumb, operators.length)]} ${randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb)}`;
+  const question = `${randomNumbGen(lowerLimitOfNumb, upperLimitOfNumb)} ${operators[randomNumbGen(lowerLimitOfNumb, operators.length - 1)]} ${randomNumbGen(lowerLimitOfNumb, upperLimitOfNumb)}`;
   const correctAnswer = String(eval(question));
   return { question, correctAnswer };
 };

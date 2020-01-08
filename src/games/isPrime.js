@@ -5,7 +5,7 @@ const rules = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 const questionGenerator = () => {
   const upperLimitOfNumb = 100;
   const lowerLimitOfNumb = 1;
-  const question = `${randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb)}`;
+  const question = `${randomNumbGen(lowerLimitOfNumb, upperLimitOfNumb)}`;
   const correctAnswer = (arg = question) => {
     let counter = 2;
     while (counter < arg) {

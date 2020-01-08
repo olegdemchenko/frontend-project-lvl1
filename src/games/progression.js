@@ -6,8 +6,8 @@ const questionGenerator = () => {
   const upperLimitOfNumb = 50;
   const upperLimitOfD = 9;
   const lowerLimitOfNumb = 1;
-  const startNumb = randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb);
-  const d = randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfD);
+  const startNumb = randomNumbGen(lowerLimitOfNumb, upperLimitOfNumb);
+  const d = randomNumbGen(lowerLimitOfNumb, upperLimitOfD);
   const arithmeticProgression = [];
   arithmeticProgression.push(startNumb);
   for (let i = 1; i < 10; i += 1) {

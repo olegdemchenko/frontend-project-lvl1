@@ -5,8 +5,8 @@ const rules = 'Find the greatest common divisor of given numbers';
 const questionGenerator = () => {
   const upperLimitOfNumb = 100;
   const lowerLimitOfNumb = 1;
-  const numb1 = randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb);
-  const numb2 = randomNumbGen('ceil', lowerLimitOfNumb, upperLimitOfNumb);
+  const numb1 = randomNumbGen(lowerLimitOfNumb, upperLimitOfNumb);
+  const numb2 = randomNumbGen(lowerLimitOfNumb, upperLimitOfNumb);
   const question = `${numb1}, ${numb2}`;
   const correctAnswer = (arg1 = numb1, arg2 = numb2) => {
     let nod = 0;
