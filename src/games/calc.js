@@ -1,14 +1,24 @@
-import randomNumbGen from '../utils';
+import { randomNumbGen } from '../utils';
 import gameConsole from '../index';
 
-const rules = 'What is the result of the expression ?';
+const description = 'What is the result of the expression ?';
+const arrayOfOperators = ['+', '-', '*'];
 const questionGenerator = () => {
-  const operators = ['+', '-', '*'];
-  const upperLimitOfNumb = 100;
-  const lowerLimitOfNumb = 0;
-  const question = `${randomNumbGen(lowerLimitOfNumb, upperLimitOfNumb)} ${operators[randomNumbGen(lowerLimitOfNumb, operators.length - 1)]} ${randomNumbGen(lowerLimitOfNumb, upperLimitOfNumb)}`;
-  const correctAnswer = String(eval(question));
+  const firstOperand = randomNumbGen(0, 100);
+  const secondOperand = randomNumbGen(0, 100);
+  const operator = randomNumbGen(0, 2);
+  const question = `${firstOperand} ${arrayOfOperators[operator]} ${secondOperand}`;
+  let correctAnswer;
+  switch (operator) {
+    case 0:
+      correctAnswer = String(firstOperand + secondOperand);
+      break;
+    case 1:
+      correctAnswer = String(firstOperand - secondOperand);
+      break;
+    default:
+      correctAnswer = String(firstOperand * secondOperand);
+  }
   return { question, correctAnswer };
 };
-const game = () => gameConsole(0, questionGenerator, rules);
-export default game;
+export default () => gameConsole(questionGenerator, description);

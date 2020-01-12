@@ -1,25 +1,22 @@
-import randomNumbGen from '../utils';
+import { randomNumbGen, isRemainderNull } from '../utils';
 import gameConsole from '../index';
 
-const rules = 'Find the greatest common divisor of given numbers';
-const questionGenerator = () => {
-  const upperLimitOfNumb = 100;
-  const lowerLimitOfNumb = 1;
-  const numb1 = randomNumbGen(lowerLimitOfNumb, upperLimitOfNumb);
-  const numb2 = randomNumbGen(lowerLimitOfNumb, upperLimitOfNumb);
-  const question = `${numb1}, ${numb2}`;
-  const correctAnswer = (arg1 = numb1, arg2 = numb2) => {
-    let nod = 0;
-    let counter = 1;
-    while (counter <= Math.min(arg1, arg2)) {
-      if (arg1 % counter === 0 && arg2 % counter === 0) {
-        nod = counter;
-      }
-      counter += 1;
+const description = 'Find the greatest common divisor of given numbers';
+const correctAnswer = (arg1, arg2) => {
+  let nod = 0;
+  let counter = 1;
+  while (counter <= Math.min(arg1, arg2)) {
+    if (isRemainderNull(arg1, counter) && isRemainderNull(arg2, counter)) {
+      nod = counter;
     }
-    return `${nod}`;
-  };
-  return { question, correctAnswer: correctAnswer() };
+    counter += 1;
+  }
+  return `${nod}`;
 };
-const game = () => gameConsole(0, questionGenerator, rules);
-export default game;
+const questionGenerator = () => {
+  const numb1 = randomNumbGen(0, 100);
+  const numb2 = randomNumbGen(0, 100);
+  const question = `${numb1}, ${numb2}`;
+  return { question, correctAnswer: correctAnswer(numb1, numb2) };
+};
+export default () => gameConsole(questionGenerator, description);

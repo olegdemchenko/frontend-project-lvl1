@@ -1,22 +1,21 @@
-import randomNumbGen from '../utils';
+import { randomNumbGen, isRemainderNull } from '../utils';
 import gameConsole from '../index';
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-const questionGenerator = () => {
-  const upperLimitOfNumb = 100;
-  const lowerLimitOfNumb = 1;
-  const question = `${randomNumbGen(lowerLimitOfNumb, upperLimitOfNumb)}`;
-  const correctAnswer = (arg = question) => {
-    let counter = 2;
-    while (counter < arg) {
-      if (arg % counter === 0) {
-        return 'no';
-      }
-      counter += 1;
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+const primeOrNot = (arg) => {
+  let counter = 2;
+  while (counter < arg) {
+    if (isRemainderNull(arg, counter)) {
+      return 'no';
     }
-    return 'yes';
-  };
-  return { question, correctAnswer: correctAnswer() };
+    counter += 1;
+  }
+  return 'yes';
 };
-const game = () => gameConsole(0, questionGenerator, rules);
-export default game;
+const questionGenerator = () => {
+  const question = `${randomNumbGen(1, 100)}`;
+  const correctAnswer = primeOrNot(question);
+  return { question, correctAnswer };
+};
+
+export default () => gameConsole(questionGenerator, description);

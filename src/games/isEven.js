@@ -1,13 +1,10 @@
-import randomNumbGen from '../utils';
+import { randomNumbGen, isEven } from '../utils';
 import gameConsole from '../index';
 
-const rules = 'Answer "yes" if the number is even, otherwise answer "no"';
+const description = 'Answer "yes" if the number is even, otherwise answer "no"';
 const questionGenerator = () => {
-  const upperLimitOfNumb = 100;
-  const lowerLimitOfNumb = 1;
-  const question = randomNumbGen(lowerLimitOfNumb, upperLimitOfNumb);
-  const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
+  const question = randomNumbGen(1, 100);
+  const correctAnswer = isEven(question);
   return { question, correctAnswer };
 };
-const game = () => gameConsole(0, questionGenerator, rules);
-export default game;
+export default () => gameConsole(questionGenerator, description);
