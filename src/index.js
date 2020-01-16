@@ -6,7 +6,8 @@ const gameConsole = (game, rules) => {
   console.log(rules);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
-  for (let i = 0; i < 3; i += 1) {
+  const countOfGameLevels = 3;
+  for (let i = 0; i < countOfGameLevels; i += 1) {
     const { question, correctAnswer } = game();
     console.log(`Question: ${question}`);
     const gamerAnswer = readlineSync.question('Your answer:');
