@@ -1,26 +1,26 @@
 import randomNumbGen from '../utils';
-import gameConsole from '../index';
+import runEngine from '../index';
 
 const description = 'What is the result of the expression ?';
-const arrayOfOperators = ['+', '-', '*'];
-const getResult = (operator, arg1, arg2) => {
+const operators = ['+', '-', '*'];
+const calculate = (operator, arg1, arg2) => {
   switch (operator) {
     case '+':
-      return String(arg1 + arg2);
+      return (arg1 + arg2);
     case '-':
-      return String(arg1 - arg2);
+      return (arg1 - arg2);
     case '*':
-      return String(arg1 * arg2);
+      return (arg1 * arg2);
     default:
-      return 'the result cannot be determined';
+      return null;
   }
 };
-const questionGenerator = () => {
+const genGameData = () => {
   const firstOperand = randomNumbGen(0, 100);
   const secondOperand = randomNumbGen(0, 100);
-  const operator = arrayOfOperators[randomNumbGen(0, arrayOfOperators.length - 1)];
+  const operator = operators[randomNumbGen(0, operators.length - 1)];
   const question = `${firstOperand} ${operator} ${secondOperand}`;
-  const correctAnswer = getResult(operator, firstOperand, secondOperand);
+  const correctAnswer = String(calculate(operator, firstOperand, secondOperand));
   return { question, correctAnswer };
 };
-export default () => gameConsole(questionGenerator, description);
+export default () => runEngine(genGameData, description);

@@ -1,22 +1,22 @@
 import randomNumbGen from '../utils';
-import gameConsole from '../index';
+import runEngine from '../index';
 
 const description = 'What number is missing in the progression?';
 const progressionLength = 10;
-const maxValueOfDifference = 10;
-const questionGenerator = () => {
+const difference = 10;
+const genGameData = () => {
   const startNumb = randomNumbGen(1, 50);
-  const progressionDifference = randomNumbGen(1, maxValueOfDifference);
+  const progressionDifference = randomNumbGen(1, difference);
   const arithmeticProgression = [];
   arithmeticProgression.push(startNumb);
   for (let i = 1; i < progressionLength; i += 1) {
     arithmeticProgression.push(arithmeticProgression[i - 1] + progressionDifference);
   }
-  const indexOfHiddenElement = randomNumbGen(0, progressionLength - 1);
-  const answer = arithmeticProgression[indexOfHiddenElement];
-  arithmeticProgression[indexOfHiddenElement] = '..';
+  const hiddenElementIndex = randomNumbGen(0, progressionLength - 1);
+  const answer = arithmeticProgression[hiddenElementIndex];
+  arithmeticProgression[hiddenElementIndex] = '..';
   const question = arithmeticProgression.join(' ');
   const correctAnswer = String(answer);
   return { question, correctAnswer };
 };
-export default () => gameConsole(questionGenerator, description);
+export default () => runEngine(genGameData, description);

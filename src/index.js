@@ -1,13 +1,12 @@
 import readlineSync from 'readline-sync';
 
-
-const gameConsole = (game, rules) => {
+const gameLevelsCount = 3;
+const runEngine = (game, rules) => {
   console.log('Welcome to the Brain Games!');
   console.log(rules);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
-  const countOfGameLevels = 3;
-  for (let i = 0; i < countOfGameLevels; i += 1) {
+  for (let i = 0; i < gameLevelsCount; i += 1) {
     const { question, correctAnswer } = game();
     console.log(`Question: ${question}`);
     const gamerAnswer = readlineSync.question('Your answer:');
@@ -20,4 +19,4 @@ const gameConsole = (game, rules) => {
   }
   console.log(`Congratilations, ${name}!`);
 };
-export default gameConsole;
+export default runEngine;
