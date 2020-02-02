@@ -3,14 +3,14 @@ import runEngine from '../index';
 
 const description = 'What is the result of the expression ?';
 const operators = ['+', '-', '*'];
-const calculate = (operator, arg1, arg2) => {
+const calculate = (operator, numb1, numb2) => {
   switch (operator) {
     case '+':
-      return (arg1 + arg2);
+      return (numb1 + numb2);
     case '-':
-      return (arg1 - arg2);
+      return (numb1 - numb2);
     case '*':
-      return (arg1 * arg2);
+      return (numb1 * numb2);
     default:
       return null;
   }

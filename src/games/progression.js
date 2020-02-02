@@ -3,10 +3,10 @@ import runEngine from '../index';
 
 const description = 'What number is missing in the progression?';
 const progressionLength = 10;
-const difference = 10;
+const maxDifference = 10;
 const genGameData = () => {
   const startNumb = randomNumbGen(1, 50);
-  const progressionDifference = randomNumbGen(1, difference);
+  const progressionDifference = randomNumbGen(1, maxDifference);
   const arithmeticProgression = [];
   arithmeticProgression.push(startNumb);
   for (let i = 1; i < progressionLength; i += 1) {
