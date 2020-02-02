@@ -1,6 +1,5 @@
 # frontend-project-lvl1
 <a href="https://codeclimate.com/github/olegdemchenko/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/34ebcbfa53319be355b7/maintainability" /></a>
-
 <img src="https://travis-ci.org/olegdemchenko/frontend-project-lvl1.svg?branch=master"/>
 <br>
 <h4>install brain-even</h4>
