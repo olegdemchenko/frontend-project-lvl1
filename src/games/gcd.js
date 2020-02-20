@@ -12,7 +12,7 @@ const getGreatestDivisor = (number1, number2) => {
 const genGameData = () => {
   const numb1 = randomNumbGen(0, 100);
   const numb2 = randomNumbGen(0, 100);
-  const question = String().concat(numb1, ', ', numb2);
+  const question = `${numb1}, ${numb2}`;
   return { question, correctAnswer: String(getGreatestDivisor(numb1, numb2)) };
 };
 export default () => runEngine(genGameData, description);

@@ -19,7 +19,7 @@ const genGameData = () => {
   const firstOperand = randomNumbGen(0, 100);
   const secondOperand = randomNumbGen(0, 100);
   const operator = operators[randomNumbGen(0, operators.length - 1)];
-  const question = String().concat(firstOperand, ' ', operator, ' ', secondOperand);
+  const question = `${firstOperand} ${operator} ${secondOperand}`;
   const correctAnswer = String(calculate(operator, firstOperand, secondOperand));
   return { question, correctAnswer };
 };

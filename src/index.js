@@ -13,7 +13,8 @@ const runEngine = (genGameData, description) => {
     if (gamerAnswer === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`${gamerAnswer} is wrong answer :(. Correct answer was ${correctAnswer}.\nLets try again, ${name}}`);
+      console.log(`${gamerAnswer} is wrong answer :(. Correct answer was ${correctAnswer}.`);
+      console.log(`Lets try again, ${name}`);
       return;
     }
   }
