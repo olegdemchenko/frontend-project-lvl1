@@ -3,6 +3,7 @@
 ![Node.js CI](https://github.com/olegdemchenko/frontend-project-lvl1/workflows/Node.js%20CI/badge.svg)
 <a href = 'https://travis-ci.org/olegdemchenko/frontend-project-lvl1'><img src="https://travis-ci.org/olegdemchenko/frontend-project-lvl1.svg?branch=master"/></a>
 <br>
+<h3><b>My first project with Hexlet</b></h3>
 <h4>install brain-even</h4>
 <a href="https://asciinema.org/a/JyCEhLfQlFj1I8XoDBSWFRQzw" target="_blank"><img src="https://asciinema.org/a/JyCEhLfQlFj1I8XoDBSWFRQzw.svg" /></a>
 <br>
